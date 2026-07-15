@@ -1,5 +1,8 @@
 package com.erazero1.tasks.data.model
 
+import com.erazero1.tasks.domain.model.Address
+import com.erazero1.tasks.domain.model.Company
+import com.erazero1.tasks.domain.model.User
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
@@ -19,4 +22,14 @@ data class UserDTO(
     val website: String?,
     @SerialName("company")
     val company: CompanyDTO?,
+)
+
+fun UserDTO.toDomain() = User(
+    name = this.name.orEmpty(),
+    username = this.username.orEmpty(),
+    email = this.email.orEmpty(),
+    address = this.address?.toDomain() ?: Address(),
+    phone = this.phone.orEmpty(),
+    website = this.website.orEmpty(),
+    company = this.company?.toDomain() ?: Company(),
 )

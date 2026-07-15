@@ -1,5 +1,7 @@
 package com.erazero1.tasks.data.model
 
+import com.erazero1.tasks.domain.model.Address
+import com.erazero1.tasks.domain.model.Geo
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
@@ -15,4 +17,12 @@ data class AddressDTO(
     val zipcode: String?,
     @SerialName("geo")
     val geo: GeoDTO?,
+)
+
+fun AddressDTO.toDomain() = Address(
+    street = this.street.orEmpty(),
+    suite = this.suite.orEmpty(),
+    city = this.city.orEmpty(),
+    zipcode = this.zipcode.orEmpty(),
+    geo = this.geo?.toDomain() ?: Geo()
 )
