@@ -54,8 +54,6 @@ git clone https://github.com/erazero1/Tasks.git
 
 ## Скриншоты
 
-## Скриншоты
-
 <table>
   <tr>
     <td><img src="assets/userList.png" width="250" alt="Список пользователей"/></td>
