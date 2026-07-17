@@ -12,6 +12,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updateLayoutParams
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.erazero1.tasks.R
 import com.erazero1.tasks.databinding.FragmentUserDetailsBinding
@@ -97,7 +98,13 @@ class UserDetailsFragment : Fragment() {
             safelyStartActivity(webIntent, getString(R.string.no_browser_error))
         }
 
-        binding.btnShowTasks.setOnClickListener {}
+        binding.btnShowTasks.setOnClickListener {
+            val action = UserDetailsFragmentDirections.actionUserDetailsFragmentToTodoListFragment(
+                userId = user.id,
+                userName = user.name
+            )
+            findNavController().navigate(action)
+        }
     }
 
     private fun safelyStartActivity(intent: Intent, errorMessage: String) {

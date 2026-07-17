@@ -1,5 +1,6 @@
 package com.erazero1.tasks.di
 
+import com.erazero1.tasks.data.api.TodoApi
 import com.erazero1.tasks.data.api.UserApi
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
@@ -8,7 +9,6 @@ import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.kotlinx.serialization.asConverterFactory
-import retrofit2.create
 
 val dataModule = module {
     single {
@@ -43,4 +43,11 @@ val dataModule = module {
 
         retrofit.create(UserApi::class.java)
     }
+
+    single<TodoApi> {
+        val retrofit: Retrofit = get()
+
+        retrofit.create(TodoApi::class.java)
+    }
+
 }

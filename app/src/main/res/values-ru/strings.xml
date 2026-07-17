@@ -24,4 +24,9 @@
     <string name="company">Компания</string>
     <string name="address">Адрес</string>
     <string name="show_tasks">Показать задачи</string>
+    <string name="all">Все</string>
+    <string name="in_progress">В работе</string>
+    <string name="done">Выполнено</string>
+    <string name="server_format">Сервер: %b</string>
+    <string name="tasks">Задачи</string>
 </resources>

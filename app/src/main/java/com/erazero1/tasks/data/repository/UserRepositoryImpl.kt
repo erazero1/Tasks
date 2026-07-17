@@ -2,12 +2,10 @@ package com.erazero1.tasks.data.repository
 
 import com.erazero1.tasks.data.api.UserApi
 import com.erazero1.tasks.data.model.toDomain
-import com.erazero1.tasks.domain.model.AppNetworkException
 import com.erazero1.tasks.domain.model.User
 import com.erazero1.tasks.domain.repository.UserRepository
+import com.erazero1.tasks.utils.mapToAppNetworkException
 import kotlinx.coroutines.CancellationException
-import retrofit2.HttpException
-import java.io.IOException
 
 class UserRepositoryImpl(
     private val api: UserApi
@@ -20,7 +18,6 @@ class UserRepositoryImpl(
             if (e is CancellationException) throw e
 
             Result.failure(mapToAppNetworkException(e))
-
         }
     }
 
@@ -32,15 +29,6 @@ class UserRepositoryImpl(
             if (e is CancellationException) throw e
 
             Result.failure(mapToAppNetworkException(e))
-
-        }
-    }
-
-    private fun mapToAppNetworkException(e: Exception): AppNetworkException {
-        return when (e) {
-            is IOException -> AppNetworkException.NoInternetException()
-            is HttpException -> AppNetworkException.ServerException(e.code())
-            else -> AppNetworkException.UnknownNetworkException(e.localizedMessage)
         }
     }
 }

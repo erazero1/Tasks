@@ -26,4 +26,9 @@
     <string name="company">Company</string>
     <string name="address">Address</string>
     <string name="show_tasks">Show tasks</string>
+    <string name="all">All</string>
+    <string name="in_progress">In progress</string>
+    <string name="done">Done</string>
+    <string name="server_format">Server: %b</string>
+    <string name="tasks">Tasks</string>
 </resources>

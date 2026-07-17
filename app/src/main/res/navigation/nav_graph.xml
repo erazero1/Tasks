@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_user_list">
         <action
             android:id="@+id/action_userListFragment_to_userDetailsFragment"
-            app:destination="@id/userDetailsFragment"/>
+            app:destination="@id/userDetailsFragment" />
     </fragment>
 
     <fragment
@@ -24,6 +24,24 @@
         <argument
             android:name="user"
             app:argType="com.erazero1.tasks.domain.model.User" />
+
+        <action
+            android:id="@+id/action_userDetailsFragment_to_todoListFragment"
+            app:destination="@id/todoListFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/todoListFragment"
+        android:name="com.erazero1.tasks.ui.todoList.TodoListFragment"
+        android:label="@string/tasks"
+        tools:layout="@layout/fragment_todo_list">
+
+        <argument
+            android:name="userId"
+            app:argType="integer" />
+        <argument
+            android:name="userName"
+            app:argType="string" />
     </fragment>
 
 </navigation>
