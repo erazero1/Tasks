@@ -82,7 +82,7 @@
             android:id="@+id/tvErrorMessage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/error_occured"
+            android:text="@string/error_occurred"
             android:textColor="?android:attr/textColorPrimary" />
 
         <Button

@@ -3,9 +3,25 @@
     <string name="users">Пользователи</string>
     <string name="unknown_error">Неизвестная ошибка</string>
     <string name="nothing_found">Ничего не найдено</string>
-    <string name="error_occured">Произошла ошибка</string>
+    <string name="error_occurred">Произошла ошибка</string>
     <string name="retry">Повторить</string>
     <string name="search_by_name_surname_email">Поиск по имени, username, email</string>
     <string name="error_no_internet">Вы не подключены к сети</string>
     <string name="error_server">Ошибка сервера (Код: %d)</string>
+    <string name="user_details">Детали о Пользователе</string>
+    <string name="email_format">Эл. почта: %s</string>
+    <string name="phone_number_format">Номер телефона: %s</string>
+    <string name="website_format">Веб-сайт: %s</string>
+    <string name="business_sphere_format">Сфера Бизнеса: %s</string>
+    <string name="city_format">Город: %s</string>
+    <string name="street_format">Улица: %s</string>
+    <string name="suite_format">Квартира: %s</string>
+    <string name="zipcode_format">Почтовый индекс: %s</string>
+    <string name="no_browser_error">Нет браузера для открытия ссылки</string>
+    <string name="no_apps_to_make_phone_call_error">Нет приложения для совершения звонков</string>
+    <string name="no_mail_app_error">Нет приложения для отправки почты</string>
+    <string name="contacts">Контакты</string>
+    <string name="company">Компания</string>
+    <string name="address">Адрес</string>
+    <string name="show_tasks">Показать задачи</string>
 </resources>

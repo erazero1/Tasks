@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import com.erazero1.tasks.R
 import com.erazero1.tasks.databinding.FragmentUserListBinding
 import com.erazero1.tasks.domain.model.AppNetworkException
@@ -45,7 +46,12 @@ class UserListFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        userAdapter = UserAdapter {}
+        userAdapter = UserAdapter { clickedUser ->
+            val action = UserListFragmentDirections.actionUserListFragmentToUserDetailsFragment(
+                user = clickedUser
+            )
+            findNavController().navigate(action)
+        }
         binding.recyclerView.adapter = userAdapter
     }
 
@@ -104,7 +110,7 @@ class UserListFragment : Fragment() {
                 getString(R.string.unknown_error)
             }
 
-            else -> throwable.localizedMessage ?: getString(R.string.error_occured)
+            else -> throwable.localizedMessage ?: getString(R.string.error_occurred)
         }
     }
 

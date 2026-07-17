@@ -10,6 +10,20 @@
         android:name="com.erazero1.tasks.ui.userList.UserListFragment"
         android:label="@string/users"
         tools:layout="@layout/fragment_user_list">
+        <action
+            android:id="@+id/action_userListFragment_to_userDetailsFragment"
+            app:destination="@id/userDetailsFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/userDetailsFragment"
+        android:name="com.erazero1.tasks.ui.userDetails.UserDetailsFragment"
+        android:label="@string/user_details"
+        tools:layout="@layout/fragment_user_details">
+
+        <argument
+            android:name="user"
+            app:argType="com.erazero1.tasks.domain.model.User" />
     </fragment>
 
 </navigation>
