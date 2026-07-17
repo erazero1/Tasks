@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">Tasks</string>
+    <string name="app_name" translatable="false">Tasks</string>
+    <string name="users">Users</string>
+    <string name="unknown_error">Unknown Error</string>
+    <string name="nothing_found" >Nothing found</string>
+    <string name="error_occured">Error occured</string>
+    <string name="retry">Retry</string>
+    <string name="search_by_name_surname_email">Search by name, surname and email</string>
+    <string name="error_no_internet">You are not connected to the internet</string>
+    <string name="error_server">Server Error (Code: %d)</string>
 </resources>

@@ -6,8 +6,8 @@ import retrofit2.http.Path
 
 interface UserApi {
     @GET("/users")
-    suspend fun getUserList(): Result<List<UserDTO>>
+    suspend fun getUserList(): List<UserDTO>
 
     @GET("/users/{userId}")
-    suspend fun getUserById(@Path("userId") userId: Int): Result<UserDTO>
+    suspend fun getUserById(@Path("userId") userId: Int): UserDTO
 }

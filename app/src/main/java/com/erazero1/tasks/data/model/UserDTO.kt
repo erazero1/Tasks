@@ -8,6 +8,8 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class UserDTO(
+    @SerialName("id")
+    val id: Int,
     @SerialName("name")
     val name: String?,
     @SerialName("username")
@@ -25,6 +27,7 @@ data class UserDTO(
 )
 
 fun UserDTO.toDomain() = User(
+    id = this.id,
     name = this.name.orEmpty(),
     username = this.username.orEmpty(),
     email = this.email.orEmpty(),

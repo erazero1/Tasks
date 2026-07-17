@@ -2,6 +2,8 @@ package com.erazero1.tasks
 
 import android.app.Application
 import com.erazero1.tasks.di.dataModule
+import com.erazero1.tasks.di.domainModule
+import com.erazero1.tasks.di.uiModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -12,7 +14,7 @@ class TasksApplication : Application() {
         startKoin {
             androidLogger()
             androidContext(this@TasksApplication)
-            modules(listOf(dataModule))
+            modules(listOf(dataModule, domainModule, uiModule))
         }
     }
 }
